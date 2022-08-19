@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app"
-import { getStorage } from "firebase/storage"
+import { getStorage, ref, listAll } from "firebase/storage"
 
 const firebaseConfig = {
   apiKey: "AIzaSyDzFqnR7_y9wnFnF-0eojhunWnM7KJOiLY",
