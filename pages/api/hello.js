@@ -18,5 +18,15 @@ const app = initializeApp(firebaseConfig)
 const storage = getStorage(app)
 const listRef = ref(storage, 'files')
 export default function handler(req, res) {
-  res.status(200).json(listRef)
+listAll(listRef)
+  .then((res) => {
+    res.prefixes.forEach((folderRef) => {
+      res.status(200).json(folderRef)
+    })
+    res.items.forEach((itemRef) => {
+      res.status(200).json(itemRef)
+    })
+  }).catch((error) => {
+    res.status(200).json(error)
+  })
 }
