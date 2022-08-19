@@ -16,7 +16,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
 const storage = getStorage(app)
-const listRef = ref(storage, 'files/')
+const listRef = ref(storage, '')
 export default function handler(req, res) {
 listAll(listRef)
   .then((res) => {
