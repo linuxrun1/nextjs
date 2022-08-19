@@ -19,13 +19,8 @@ const storage = getStorage(app)
 const listRef = ref(storage, '')
 export default function handler(req, res) {
 listAll(listRef)
-  .then((res) => {
-    res.prefixes.forEach((folderRef) => {
-      res.status(200).json(folderRef)
-    })
-    res.items.forEach((itemRef) => {
-      res.status(200).json(itemRef)
-    })
+  .then((ros) => {
+    res.status(200).json(ros)
   }).catch((error) => {
     res.status(200).json(error)
   })
